@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Lleyton</a>
+
+        <i class="fa-solid fa-bars" id="menu-icon" onclick="openmenu()"></i>
+
+        <nav class="navbar" id="sidemenu">
+            <a href="#top">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-img">
+            <img src="./assets/hi.jpg">
+        </div>
+        <div class="home-content">
+            <h1>Hi, it's <span> Lleyton </span></h1>
+            <span class="text typing-text">I'm a </span>
+            <span class="text first-text">Programmer.</span>
+            <p>I'm a dedicated programmer with a strong focus on writing clean, efficient code. My passion lies in solving complex problems and developing software that meets user needs. Explore my work to see how I bring ideas to life through code.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/lleyton-geboh-724580256/"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/lleytongeboh"><i class="fa-brands fa-github"></i></a>
+                <a href="https://stackoverflow.com/users/27039556/lleyton-geboh"><i class="fa-brands fa-stack-overflow"></i></a>
+                <a href="https://www.instagram.com/lleytongeboh/?next=%2F"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+    </section>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./assets/main.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>My name is Lleyton Geboh, a 22-year-old male from Kuching, Sarawak, Malaysia. I am passionate about my work and always eager to learn and grow. If you’d like to get in touch, feel free to email me at lleytongeboh18@gmail.com.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>After Effect/Premiere Pro</span><br>Making Videos</li>
+                            <li><span>Figma</span><br>Designing</li>
+                            <li><span>HTML</span><br>Coding</li>
+                            <li><span>CSS</span><br>Coding</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>STPM</span><br>Completed STPM</li>
+                            <li><span>2022 - Current</span><br>Bachelor in Computer Science (Multimedia Computing) with Honours</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Self Employed</span><br>Freelancer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title"> My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Developement</h2>
+                    <p>I specialise in web development for dynamic and static websites.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-crop"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>I design intuitive and visually appealing interfaces that enhance user experience and drive engagement, ensuring your website is both functional and aesthetically pleasing.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>App Design</h2>
+                    <p>I create sleek and user-friendly app designs that focus on usability and visual appeal, delivering a seamless experience across all devices.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="project-list">
+                <div class="project">
+                    <img src="./assets/file.jpg">
+                    <div class="layer">
+                        <h3>Portfolio Website</h3>
+                        <p>Personal Project</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>lleytongeboh18@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>016-575 7837</p>
+                    <div class="social-icons2">
+                        <a href="https://www.linkedin.com/in/lleyton-geboh-724580256/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/lleytongeboh"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://stackoverflow.com/users/27039556/lleyton-geboh"><i class="fa-brands fa-stack-overflow"></i></a>
+                        <a href="https://www.instagram.com/lleytongeboh/?next=%2F"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="Submit" class="btn btn2 btn3">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Lleyton Geboh's Portfolio </p>
+        </div>
+    </div>
+
+    <script>
+        const text = document.querySelector(".first-text");
+        
+        // Array of the text contents you want to cycle through
+        const textArray = ["Web Designer.", "App Developer.", "Programmer."];
+        let currentIndex = 0;
+    
+        const textLoad = () => {
+            setInterval(() => {
+                text.textContent = textArray[currentIndex];
+                currentIndex = (currentIndex + 1) % textArray.length; // Cycle through the array
+            }, 4000); // Change the text every 4 seconds
+        }
+    
+        textLoad();
+        
+    </script>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    var menuIcon = document.getElementById("menu-icon");
+
+    // Toggle sidebar open and close
+    function toggleMenu() {
+        // Check if the sidebar is currently open
+        if (sidemenu.style.right === "0px") {
+            // If open, hide the sidebar by moving it out of view
+            sidemenu.style.right = "-100vw"; // Fully hidden off-screen
+        } else {
+            // If closed, show the sidebar
+            sidemenu.style.right = "0"; // Sidebar is fully visible
+        }
+    }
+
+    // Attach the toggleMenu function to the menu icon
+    menuIcon.onclick = toggleMenu;
+
+    // Add event listeners to all sidebar links to close the sidebar when clicked
+    document.querySelectorAll('.navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+            sidemenu.style.right = "-100vw"; // Fully hide the sidebar after clicking a link
+        });
+    });
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyGpM-x8Gno8qxSvSfM0VdbZ9FCqYgNWG4ULmQuwi7vHXHQ71dReXzu9WN98Sq9iYnR/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Sent Successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+    
+
+</body>
+</html>

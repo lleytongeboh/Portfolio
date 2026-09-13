@@ -130,7 +130,6 @@
 }
 
 /* Compact project showcase grid. */
-#projects .container { width: min(1120px, 88%); }
 .project-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;

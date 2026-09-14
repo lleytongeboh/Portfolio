@@ -3,18 +3,31 @@ const navigation = document.querySelector('#navigation');
 menuButton.hidden = false;
 function setMenu(open) {
   menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
   navigation.dataset.open = String(open);
-  menuButton.querySelector('span').textContent = open ? '−' : '+';
+  const menuIcon = menuButton.querySelector('i');
+  menuIcon.classList.toggle('fa-bars', !open);
+  menuIcon.classList.toggle('fa-xmark', open);
 }
 setMenu(false);
 menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
 navigation.addEventListener('click', event => {
   if (event.target.closest('a')) setMenu(false);
 });
+document.addEventListener('click', event => {
+  if (menuButton.getAttribute('aria-expanded') === 'true' && !event.target.closest('header')) {
+    setMenu(false);
+  }
+});
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
     setMenu(false);
     menuButton.focus();
+  }
+});
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 760 && menuButton.getAttribute('aria-expanded') === 'true') {
+    setMenu(false);
   }
 });
 document.querySelector('#year').textContent = new Date().getFullYear();
@@ -27,7 +40,8 @@ function selectTab(tab) {
     item.tabIndex = selected ? 0 : -1;
     item.classList.toggle('active-link', selected);
     const panel = document.getElementById(item.getAttribute('aria-controls'));
-    panel.hidden = !selected;
+    panel.classList.toggle('active-tab', selected);
+    panel.setAttribute('aria-hidden', String(!selected));
     if (selected && !reducedMotion.matches) {
       panel.classList.remove('tab-panel-enter');
       void panel.offsetWidth;
@@ -53,39 +67,30 @@ tabs.forEach((tab, index) => {
 });
 const roles = ['Full-Stack Developer', 'Web Developer', 'Software Developer', 'AI Integration Developer'];
 let roleIndex = 0;
-setInterval(() => {
-  if (!reducedMotion.matches && !document.hidden) {
+let characterIndex = roles[0].length;
+let deletingRole = true;
+const roleText = document.querySelector('.first-text');
+function animateRole() {
+  if (reducedMotion.matches) {
+    roleText.textContent = roles[0];
+    return;
+  }
+  if (document.hidden) {
+    setTimeout(animateRole, 500);
+    return;
+  }
+  const currentRole = roles[roleIndex];
+  characterIndex += deletingRole ? -1 : 1;
+  roleText.textContent = currentRole.slice(0, characterIndex);
+  if (!deletingRole && characterIndex === currentRole.length) {
+    deletingRole = true;
+    setTimeout(animateRole, 1600);
+  } else if (deletingRole && characterIndex === 0) {
+    deletingRole = false;
     roleIndex = (roleIndex + 1) % roles.length;
-    document.querySelector('.first-text').textContent = roles[roleIndex];
+    setTimeout(animateRole, 320);
+  } else {
+    setTimeout(animateRole, deletingRole ? 45 : 85);
   }
-}, 4000);
-const form = document.forms['submit-to-google-sheet'];
-const status = document.querySelector('#form-status');
-const submitButton = form.querySelector('button[type="submit"]');
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyGpM-x8Gno8qxSvSfM0VdbZ9FCqYgNWG4ULmQuwi7vHXHQ71dReXzu9WN98Sq9iYnR/exec';
-form.addEventListener('submit', async event => {
-  event.preventDefault();
-  if (submitButton.disabled) return;
-  submitButton.disabled = true;
-  submitButton.textContent = 'Sending…';
-  status.textContent = 'Sending your message…';
-  status.dataset.state = 'pending';
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15000);
-  try {
-    const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form), signal: controller.signal });
-    if (!response.ok) throw new Error('Request failed');
-    const result = await response.json();
-    if (result.result !== 'success') throw new Error('Delivery not confirmed');
-    status.textContent = 'Thanks! Your message has been sent.';
-    status.dataset.state = 'success';
-    form.reset();
-  } catch {
-    status.textContent = "I couldn't confirm delivery. Please email lleytongeboh18@gmail.com directly. Your message is still here to copy.";
-    status.dataset.state = 'error';
-  } finally {
-    clearTimeout(timeout);
-    submitButton.disabled = false;
-    submitButton.innerHTML = 'Send message <span aria-hidden="true">↗</span>';
-  }
-});
+}
+setTimeout(animateRole, 1600);

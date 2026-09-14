@@ -13,7 +13,7 @@
     <header>
         <a href="#top" class="logo">Lleyton.</a>
 
-        <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" hidden>Menu <span aria-hidden="true">+</span></button>
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation" hidden><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
 
         <nav class="navbar" id="navigation" aria-label="Main navigation">
             <a href="#top">Home</a>
@@ -73,13 +73,14 @@
                     </div>
                     <div class="tab-contents" id="education" role="tabpanel" aria-labelledby="tab-education" tabindex="0">
                         <ul>
-                            <li><span>STPM</span><br>Completed STPM</li>
-                            <li><span>Studies completed · UNIMAS</span><br>Bachelor in Computer Science (Multimedia Computing) with Honours</li>
+                            <li><span class="education-year">Completed</span><strong>STPM</strong><p>Science Stream</p><small>CGPA 2.67</small></li>
+                            <li><span class="education-year">2022–2026</span><strong>UNIMAS</strong><p>Bachelor in Computer Science (Multimedia Computing) with Honours</p><small>CGPA 3.35</small></li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="experience" role="tabpanel" aria-labelledby="tab-experience" tabindex="0">
                         <div class="experience-list">
                             <article class="experience-entry">
+                                <time class="experience-year" datetime="2026">2026</time>
                                 <h3>Software Developer — ProFormaX</h3>
                                 <p class="experience-label">Project-based full-stack development · Substantial contributions</p>
                                 <ul>
@@ -89,6 +90,7 @@
                                 </ul>
                             </article>
                             <article class="experience-entry">
+                                <span class="experience-year">2025–2026</span>
                                 <h3>Final Year Project Developer — Selab Management System</h3>
                                 <p class="experience-label">University Final Year Project</p>
                                 <ul>
@@ -97,7 +99,7 @@
                                     <li>Containerised and deployed with Docker, Docker Compose and Nginx; used Rapid Prototyping and user survey feedback to evaluate requirements.</li>
                                 </ul>
                             </article>
-                            <article class="experience-entry"><h3>Freelancer</h3><p class="experience-label">Self-employed</p></article>
+                            <article class="experience-entry"><span class="experience-year">Ongoing</span><h3>Freelancer</h3><p class="experience-label">Self-employed</p></article>
                         </div>
                     </div>
                 </div>
@@ -180,27 +182,28 @@
 
     <div id="contact">
         <div class="container">
-            <div class="row">
-                <div class="contact-left">
+            <div class="contact-layout">
+                <div class="contact-intro">
                     <h2 class="sub-title">Contact Me</h2>
-                    <p><a href="mailto:lleytongeboh18@gmail.com"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>lleytongeboh18@gmail.com</a></p>
-                    <p><a href="tel:+60165757837"><i class="fa-solid fa-square-phone" aria-hidden="true"></i>+60 16-575 7837</a></p>
-                    <div class="social-icons2">
+                    <p class="contact-subtitle">Have a project, opportunity, or collaboration in mind? Feel free to reach out.</p>
+                    <p class="availability"><span aria-hidden="true"></span>Open to full-stack development opportunities and collaborations</p>
+                    <div class="contact-actions">
+                        <a class="btn contact-primary" href="mailto:lleytongeboh18@gmail.com"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Email Me</a>
+                        <a class="btn" href="assets/documents/lleyton-geboh-cv.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-file-lines" aria-hidden="true"></i>View Resume</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-details">
+                        <a class="contact-detail" href="mailto:lleytongeboh18@gmail.com"><span class="contact-detail-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></span><span><small>Email</small><strong>lleytongeboh18@gmail.com</strong></span></a>
+                        <a class="contact-detail" href="tel:+60165757837"><span class="contact-detail-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span><span><small>Phone</small><strong>+60 16-575 7837</strong></span></a>
+                        <div class="contact-detail"><span class="contact-detail-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span><span><small>Location</small><strong>Kota Samarahan, Sarawak</strong></span></div>
+                    </div>
+                    <div class="social-icons2" aria-label="Social links">
                         <a href="https://www.linkedin.com/in/lleyton-geboh-724580256/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
                         <a href="https://github.com/lleytongeboh" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
                         <a href="https://stackoverflow.com/users/27039556/lleyton-geboh" aria-label="Stack Overflow" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-stack-overflow" aria-hidden="true"></i></a>
                         <a href="https://www.instagram.com/lleytongeboh/?next=%2F" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
                     </div>
-                    
-                </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <label for="name">Your name</label><input id="name" type="text" name="Name" autocomplete="name" placeholder="Your name" required maxlength="150">
-                        <label for="email">Email address</label><input id="email" type="email" name="Email" autocomplete="email" placeholder="you@example.com" required maxlength="254">
-                        <label for="message">Your message</label><textarea id="message" name="Message" rows="5" placeholder="Tell me about your project or opportunity…" required maxlength="5000"></textarea>
-                        <button type="submit" class="btn btn2 btn3">Send message ↗</button>
-                    </form>
-                    <p id="form-status" role="status" aria-live="polite"></p><noscript>Please email me directly using the link above.</noscript>
                 </div>
             </div>
         </div>

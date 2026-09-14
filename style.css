@@ -277,3 +277,6 @@
   .hero-actions { gap: 16px; }
   .hero-actions .secondary-link { gap: 8px; font-size: 12px; }
 }
+
+/* Allow the hero's contact, CV and project actions to wrap cleanly. */
+.hero-actions { flex-wrap: wrap; row-gap: 16px; }
